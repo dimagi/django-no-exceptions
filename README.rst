@@ -10,11 +10,11 @@ Usage
 Setup
 ------
 
-#. Add ``'no_exceptions.middleware.NoExceptionsMiddleware',`` to your ``MIDDLEWARE_CLASSES``
-#. Optionally set ``LET_HTTP_EXCEPTIONS_500`` (``True``/``False``)
-to determine whether to catch NoExceptions exceptions or to pass them through as normal exceptions.   
-This setting defaults to ``DEBUG``
-(pass exceptions through in DEBUG mode, turn them into appropriate responses in production).
+* Add ``'no_exceptions.middleware.NoExceptionsMiddleware',`` to your ``MIDDLEWARE_CLASSES``
+* | Optionally set ``LET_HTTP_EXCEPTIONS_500`` (``True``/``False``)
+    to determine whether to catch NoExceptions exceptions or to pass them through as normal exceptions.
+  | This setting defaults to ``DEBUG``
+    (pass exceptions through in DEBUG mode, turn them into appropriate responses in production).
 
 Using NoExceptions exceptions
 -----------------------------
@@ -30,6 +30,7 @@ Using NoExceptions exceptions
         ...
 
 Exceptions available are:
+
 | ``Http400`` - CLIENT ERROR
 | ``Http401`` - UNAUTHORIZED
 | ``Http403`` - FORBIDDEN
