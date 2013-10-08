@@ -1,5 +1,5 @@
-NoExceptions
-============
+Django No Exceptions
+====================
 
 Django No Exceptions provides middleware to catch certain exceptions that correspond to HTTP response classes.
 It was inspired by Django's Http404, and is used similarly.
@@ -9,16 +9,18 @@ Usage
 
 Setup
 ------
-Add ``'no_exceptions.middleware.NoExceptionsMiddleware',`` to your ``MIDDLEWARE_CLASSES``.
-Optionally set ``LET_HTTP_EXCEPTIONS_500`` (``True``/``False``)
-to determine whether to catch NoExceptions exceptions or to pass them through as normal exceptions.
+
+#. Add ``'no_exceptions.middleware.NoExceptionsMiddleware',`` to your ``MIDDLEWARE_CLASSES``
+#. Optionally set ``LET_HTTP_EXCEPTIONS_500`` (``True``/``False``)
+to determine whether to catch NoExceptions exceptions or to pass them through as normal exceptions.   
 This setting defaults to ``DEBUG``
 (pass exceptions through in DEBUG mode, turn them into appropriate responses in production).
 
 Using NoExceptions exceptions
 -----------------------------
 
-.. code-block:: python
+::
+
     from no_exceptions import exceptions as x
 
     def my_view(request, \*args, \**kwargs):
@@ -34,9 +36,8 @@ Exceptions available are:
 
 Django's own Http404 is also available unchanged in ``no_exceptions.exceptions``
 
-You may also use ``no_exceptions.exceptions.HttpException`` to make your own exceptions on the fly:
+You may also use ``no_exceptions.exceptions.HttpException`` to make your own exceptions on the fly::
 
-.. code-block:: python
     def my_view(request, \*args, \**kwargs):
         ...
         raise x.HttpException(
