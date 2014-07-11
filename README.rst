@@ -5,10 +5,17 @@ Django No Exceptions provides middleware to catch certain exceptions that corres
 It was inspired by Django's Http404, and is used similarly.
 
 Usage
-~~~~~~
+~~~~~
+
+Install
+-------
+
+Install with the following command::
+
+    pip install -e git+https://github.com/dimagi/django-no-exceptions.git#egg=django-no-exceptions
 
 Setup
-------
+-----
 
 * Add ``'no_exceptions.middleware.NoExceptionsMiddleware',`` to your ``MIDDLEWARE_CLASSES``
 * | Optionally set ``LET_HTTP_EXCEPTIONS_500`` (``True``/``False``)
