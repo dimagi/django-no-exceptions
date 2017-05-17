@@ -2,9 +2,10 @@ from django.http import Http404, HttpResponse
 from django.conf import settings
 
 from . import exceptions as x
+from django.utils.deprecation import MiddlewareMixin
 
 
-class NoExceptionsMiddleware(object):
+class NoExceptionsMiddleware(MiddlewareMixin):
     """
     Catch all subclasses of HttpException
 
