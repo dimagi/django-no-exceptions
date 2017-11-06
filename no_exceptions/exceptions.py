@@ -3,6 +3,7 @@ This is a list of exceptions which will raise an appropriate http error
 response.
 Http404 is not overridden, but is included here for convenience.
 """
+from __future__ import absolute_import
 from django.http import Http404
 
 
