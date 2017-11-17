@@ -1,4 +1,5 @@
 from __future__ import absolute_import
+from __future__ import print_function
 from django.http import Http404, HttpResponse
 from django.conf import settings
 
@@ -18,7 +19,7 @@ class NoExceptionsMiddleware(MiddlewareMixin):
         if not isinstance(exception, x.BaseHttpException):
             return None
         if getattr(settings, 'LET_HTTP_EXCEPTIONS_500', settings.DEBUG):
-            print "\t\t" + exception.render()
+            print("\t\t" + exception.render())
             return None
         return HttpResponse(
             exception.render(),
