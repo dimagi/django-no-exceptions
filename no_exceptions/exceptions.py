@@ -4,6 +4,7 @@ response.
 Http404 is not overridden, but is included here for convenience.
 """
 from __future__ import absolute_import
+from __future__ import unicode_literals
 from django.http import Http404
 
 
